@@ -1,12 +1,14 @@
 package com.example.Assignment.Adapters;
 
 import android.content.Context;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.Assignment.ModelData.OnlyProductData;
 import com.example.Assignment.R;
 import com.smarteist.autoimageslider.SliderViewAdapter;
@@ -31,11 +33,27 @@ public class SliderAdapter extends SliderViewAdapter<SliderAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int position) {
-       viewHolder.img.setImageResource(Integer.parseInt(data.get(position).getProductphoto()));
        viewHolder.title.setText(data.get(position).getProductname());
         viewHolder.desc.setText(data.get(position).getProductdescription());
         viewHolder.price.setText(data.get(position).getProductprice());
 
+        try{
+            if(data.get(position).getProductname().equalsIgnoreCase("iPhone 7 Plus")||data.get(position).getProductname().equalsIgnoreCase("MacBook Pro 2020")||data.get(position).getProductname().equalsIgnoreCase("Intel Core i7")||data.get(position).getProductname().equalsIgnoreCase("Google Pixel 4xl")||data.get(position).getProductname().equalsIgnoreCase("Apple Watch Series 7")||data.get(position).getProductname().equalsIgnoreCase("Google Chromecast")||data.get(position).getProductname().equalsIgnoreCase("Google Pixelbook Go")||data.get(position).getProductname().equalsIgnoreCase("Samsung Galaxy A32")||data.get(position).getProductname().equalsIgnoreCase("Galaxy Watch 4")||data.get(position).getProductname().equalsIgnoreCase("Galaxy Book Pro 360")){
+                viewHolder.img.setImageResource(Integer.parseInt(data.get(position).getProductphoto()));
+
+            }
+            else{
+                Glide
+                        .with(context)
+                        .load(Uri.parse(data.get(position).getProductphoto()))
+                        .centerCrop()
+                        .placeholder(R.drawable.imageerror)
+                        .into(viewHolder.img);
+            }
+
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+        }
 
 
     }

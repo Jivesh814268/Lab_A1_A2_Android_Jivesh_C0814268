@@ -2,10 +2,11 @@ package com.example.Assignment;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.widget.Toast;
 
+import com.example.Assignment.Adapters.ProviderAdapter;
 import com.example.Assignment.Adapters.SliderAdapter;
 import com.example.Assignment.Database.DBHelper;
 import com.example.Assignment.ModelData.OnlyProductData;
@@ -17,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SupplierDetail extends AppCompatActivity {
-    List<OnlyProductData> onlyProductDataList = new ArrayList<>();
+   static public List<OnlyProductData> onlyProductDataList = new ArrayList<>();
     SliderAdapter sliderAdapter;
     SliderView sliderView;
     DBHelper dbHelper = new DBHelper(SupplierDetail.this);
@@ -38,10 +39,9 @@ public class SupplierDetail extends AppCompatActivity {
 
 sliderView.dataSetChanged();
         onlyProductDataList.clear();
-        Cursor cursor = dbHelper.getProductsfromProvider(getIntent().getStringExtra("providername"));
-        while (cursor.moveToNext()) {
-            OnlyProductData data = new OnlyProductData(cursor.getString(0), cursor.getString(1), cursor.getString(2), cursor.getString(3));
-            onlyProductDataList.add(data);
+        Cursor cursor = dbHelper.getProductsfromProvider(ProviderAdapter.provider);
+        if(cursor==null){
+            Toast.makeText(SupplierDetail.this, "Nothing Found", Toast.LENGTH_SHORT).show();
         }
         sliderAdapter.notifyDataSetChanged();
     }
@@ -51,9 +51,6 @@ sliderView.dataSetChanged();
     @Override
     protected void onStop() {
         super.onStop();
-        Intent intent=new Intent(SupplierDetail.this,MainActivity.class);
-        startActivity(intent);
-        finish();
     }
 
 

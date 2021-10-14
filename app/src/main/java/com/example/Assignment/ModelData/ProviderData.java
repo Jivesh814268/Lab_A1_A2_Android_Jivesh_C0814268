@@ -6,12 +6,29 @@ public class ProviderData {
     public ProviderData() {
     }
 
+    public ProviderData(String providername, String provideremail, String providerphone,  String totalitems) {
+        this.providername = providername;
+        this.provideremail = provideremail;
+        this.providerphone = providerphone;
+        this.totalitems = totalitems;
+    }
+
     public ProviderData(String providername, String provideremail, String providerphone, String providerlocation, String totalitems) {
         this.providername = providername;
         this.provideremail = provideremail;
         this.providerphone = providerphone;
         this.providerlocation = providerlocation;
         this.totalitems = totalitems;
+    }
+
+    public ProviderData(String string) {
+        this.providername=string;
+    }
+
+    public ProviderData(String providername, String provideremail, String providerphone) {
+        this.providername = providername;
+        this.provideremail = provideremail;
+        this.providerphone = providerphone;
     }
 
     public String getProvidername() {

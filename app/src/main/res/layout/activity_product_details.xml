@@ -38,7 +38,8 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:layout_margin="30sp"
-                >  <TextView
+                >
+                <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="Product ID"
@@ -165,18 +166,15 @@
                     android:fontFamily="@font/opensansbold"
                     android:textSize="15sp"
                     />
-                <TextView
+
+                <com.google.android.gms.maps.MapView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="Null"
-                    android:layout_margin="5sp"
-                    android:id="@+id/providerlocationdetail"
-                    android:fontFamily="@font/opensanssemibold"
-                    android:textSize="15sp"
-                    />
+                    android:id="@+id/mapview"
+                    android:layout_height="300dp">
+
+                </com.google.android.gms.maps.MapView>
 
             </LinearLayout>
-
 
 
 
