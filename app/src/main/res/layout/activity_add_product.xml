@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+    tools:context=".AddProduct">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="80sp"
+    android:id="@+id/secondlayout"
+    android:background="@color/cardcolor"
+    >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Add Product"
+        android:textSize="25sp"
+        android:layout_centerVertical="true"
+        android:fontFamily="@font/opensanssemibold"
+        android:textColor="@color/white"
+        />
+
+
+</RelativeLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/secondlayout"
+        >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="15sp">
+
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textColor="@color/black"
+    android:textSize="20sp"
+    android:fontFamily="@font/opensanssemibold"
+    android:layout_margin="5sp"
+    android:text="Product Details"/>
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="5sp"
+            android:drawableTint="@color/black"
+            android:fontFamily="@font/opensansregular"
+            android:hint="Product Name"
+            android:textColor="@color/black"
+android:id="@+id/addprodname"
+            android:textStyle="bold" />
+
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="5sp"
+                android:textColor="@color/black"
+android:id="@+id/addproddescription"
+                android:drawableTint="@color/black"
+                android:fontFamily="@font/opensansregular"
+                android:hint="Product Description"
+                android:textStyle="bold" />
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="5sp"
+                android:inputType="number"
+                android:textColor="@color/black"
+android:id="@+id/addprodprice"
+                android:drawableTint="@color/black"
+                android:fontFamily="@font/opensansregular"
+                android:hint="Product Price"
+                android:textStyle="bold" />
+
+        <Button
+            android:layout_width="200sp"
+            android:layout_height="60sp"
+            android:layout_margin="3sp"
+            android:fontFamily="@font/opensansregular"
+            android:textColor="@color/white"
+            android:text="Add Product Image"
+            android:id="@+id/setproductimg"
+            android:backgroundTint="@color/cardcolor"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:fontFamily="@font/opensanssemibold"
+            android:layout_margin="5sp"
+            android:text="Provider Details"/>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:borderColor="@color/cardcolor"
+            app:borderWidth="2dp"
+            app:cornerRadius="8dp">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="5sp"
+                android:textColor="@color/black"
+android:id="@+id/addpname"
+                android:drawableTint="@color/black"
+                android:fontFamily="@font/opensansregular"
+                android:hint="Provider Name"
+                android:textStyle="bold" />
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="5sp"
+                android:textColor="@color/black"
+android:id="@+id/addpemail"
+                android:drawableTint="@color/black"
+                android:fontFamily="@font/opensansregular"
+                android:hint="Provider E-mail"
+                android:textStyle="bold" />
+
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="5sp"
+                android:id="@+id/addpphone"
+                android:textColor="@color/black"
+                android:fontFamily="@font/opensansregular"
+                android:hint="Provider Phone"
+                android:textStyle="bold" />
+
+       <Button
+           android:layout_width="150sp"
+           android:layout_height="60sp"
+           android:layout_margin="3sp"
+           android:textColor="@color/white"
+           android:text="Set Location"
+           android:fontFamily="@font/opensansregular"
+
+           android:id="@+id/setlocationbtn"
+           android:backgroundTint="@color/cardcolor"
+           />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Add"
+            android:id="@+id/btnadd"
+            android:layout_margin="5sp"
+            android:fontFamily="@font/opensansregular"
+
+            android:backgroundTint="@color/cardcolor"
+            />
+    </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
